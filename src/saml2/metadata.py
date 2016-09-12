@@ -65,7 +65,7 @@ def metadata_tostring_fix(desc, nspair, xmlstring=""):
     if not xmlstring:
         xmlstring = desc.to_string(nspair)
 
-    if six.PY2:
+    if isinstance(xmlstring, six.string_types):
         if "\"xs:string\"" in xmlstring and XMLNSXS not in xmlstring:
             xmlstring = xmlstring.replace(MDNS, MDNS + XMLNSXS)
     else:

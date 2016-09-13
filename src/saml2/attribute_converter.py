@@ -486,6 +486,7 @@ class AttributeConverter(object):
         :param attrvals: A dictionary of attributes and values
         :return: A list of Attribute instances
         """
+
         attributes = []
         for key, value in attrvals.items():
             lkey = key.lower()

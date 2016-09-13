@@ -272,6 +272,7 @@ class AttributeValueBase(SamlBase):
                 pass
 
 
+
 class BaseIDAbstractType_(SamlBase):
     """The urn:oasis:names:tc:SAML:2.0:assertion:BaseIDAbstractType element """
 
@@ -1311,6 +1312,9 @@ class AttributeStatementType_(StatementAbstractType_):
                  text=None,
                  extension_elements=None,
                  extension_attributes=None):
+        extension_attributes = extension_attributes or {}
+        extension_attributes.setdefault('xmlns:xs', XS_NAMESPACE)
+
         StatementAbstractType_.__init__(
             self, text=text, extension_elements=extension_elements,
             extension_attributes=extension_attributes)

@@ -577,7 +577,6 @@ class SamlBase(ExtensionContainer):
         return None
 
     def get_ns_map(self, elements, uri_set):
-
         for elem in elements:
             uri_set = self.get_ns_map_attribute(elem.attrib, uri_set)
             uri_set = self.get_ns_map(elem.getchildren(), uri_set)
